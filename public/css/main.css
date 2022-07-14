@@ -53,6 +53,33 @@ main{
     color: var(--text-base);
 }
 
+.btn{
+    cursor: pointer;
+
+    margin-block: 2rem 1.4rem;
+    padding: 1.2rem 2.4rem;
+    width: 100%;
+
+    background-color: var(--primary-color);
+    border-radius: .4rem;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    letter-spacing: 0.015rem;
+    text-transform: uppercase;
+    color: var(--text-btn);
+    text-align: center;
+
+    transition: .3s;
+}
+
+.btn:hover{
+    filter: brightness(1.2);
+    transition: .3s;
+}
+
 /* Column-1 configs */
 main .column-1{
     grid-area: left;
@@ -195,32 +222,6 @@ form .options-login{
     text-align: right;
 }
 
-form button{
-    cursor: pointer;
-
-    margin-block: 2rem 1.4rem;
-    padding: 1.2rem 2.4rem;
-    width: 100%;
-
-    background-color: var(--primary-color);
-    border-radius: .4rem;
-
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.8rem;
-    line-height: 2.7rem;
-    letter-spacing: 0.015rem;
-    text-transform: uppercase;
-    color: var(--text-btn);
-
-    transition: .3s;
-}
-
-form button:hover{
-    filter: brightness(1.2);
-    transition: .3s;
-}
-
 .box-form > .options-login{
     display: flex;
     justify-content: center;
@@ -245,6 +246,36 @@ main .column-2{
     background: url('../img/side-image.png') no-repeat center;
     background-size: cover;
     filter: contrast(1.3);
+}
+
+/* Page result configs */
+.result{
+    width: 100vw;
+    height: 100vh;
+    
+    background-color: var(--background);
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    color: var(--text-base);
+    text-align: center;
+}
+
+.result h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    color: var(--text-title);
+}
+
+.result .btn{
+    width: min(25rem, 100%);
 }
 
 /* Response */
