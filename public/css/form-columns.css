@@ -1,0 +1,25 @@
+/* Column-1 configs */
+main .column-1{
+    grid-area: left;
+    background-color: var(--background);
+}
+
+.column-1 .wrapper{
+    height: calc(100vh - 13rem);
+}
+
+.box-form{
+    width: min(80%, 57.2rem);
+    padding: min(5.5rem, 80%) min(11.9rem, 15%);
+}
+
+/* Column-2 configs */
+main .column-2{
+    grid-area: right;
+
+    height: 100vh;
+
+    background: url('../img/side-image.png') no-repeat center;
+    background-size: cover;
+    filter: contrast(1.3);
+}

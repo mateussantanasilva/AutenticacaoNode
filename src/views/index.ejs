@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<%- include('partials/head') %>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="./css/form-columns.css">
+</head>
 
 <body>
     <main>
@@ -9,11 +11,11 @@
             <header class="main-menu">
                 <a href="/"><img src="./img/logo.svg" alt="Logo camp.in"></a>
             </header>
-            <div class="wrapper">
+            <div class="wrapper flex-center">
 
                 <div class="box-form">
                     <header class="header-form">
-                        <h2>
+                        <h2 class="flex-just-start">
                             <img src="./img/log-in.svg" alt="Ícone de entrar">
                             Faça seu login
                         </h2>
@@ -22,7 +24,7 @@
 
                     <form action="/entrar" method="post">
                         <label for="email" class="paragraph-gray">E-mail</label>
-                        <div class="input-content">
+                        <div class="input-content flex-just-start">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -35,7 +37,7 @@
                         </div>
 
                         <label for="password" class="paragraph-gray">Senha</label>
-                        <div class="input-content">
+                        <div class="input-content flex-just-start">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -49,7 +51,7 @@
                         </div>
 
                         <div class="options-login">
-                            <div class="wrapper-remember">
+                            <div class="wrapper-remember .flex-center">
                                 <input type="checkbox" name="remember" id="remember">
                                 <label for="remember">Lembre-me</label>
                             </div>
@@ -60,7 +62,7 @@
 
                     </form>
 
-                    <div class="options-login">
+                    <div class="options-login flex-center">
                         <p class="links">Não tem uma conta?</p>
                         <a href="" class="links">Registre-se</a>
                     </div>
