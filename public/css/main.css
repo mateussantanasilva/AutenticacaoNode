@@ -222,32 +222,48 @@ form .options-login{
 }
 
 /* Response */
-@media (max-width: 850px){
-    body{
-        overflow: hidden;
+@media (max-width: 900px){
+    main, main.main-register, main.main-recovery{
+        grid-template-columns: 1fr;
+        grid-template-areas: 'left';
+        background-color: var(--background);
+
+        height: auto;
     }
 
     main{
-        grid-template-areas: 'left left';
+        grid-template-rows: 1rem;
+    }
+
+    main.main-register{
+        grid-template-rows: 18rem;
+    }
+
+    .content > .wrapper{
         background-color: var(--background);
     }
 
     .column-1 .wrapper{
-        height: 100vh;
+        min-height: 100vh;
     }
 
     .column-1 .box-form{
         background-color: transparent;
         padding: 0 min(10%, 5%);
-        margin-top: -20rem;
         width: 80%;
     }
 }
 
 @media (max-width: 425px){
+    main{
+        grid-template-rows: 8rem;
+    }
+
+    main.main-register{
+        grid-template-rows: 25rem;
+    }
+
     .column-1 .box-form {
-        padding: 0 2rem;
-        margin-top: -10rem;
         width: 100%;
         padding: 2rem;
     }

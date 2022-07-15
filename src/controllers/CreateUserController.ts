@@ -12,6 +12,16 @@ export class CreateUserController {
 
         const { name, email, password } = req.body
 
+        const existingEmail = await prismaClient.user.findFirst({
+            where:{
+                email: email
+            }
+        })
+
+        if(existingEmail){
+            return res.redirect('/cadastrar?status=err-existing-mail')
+        }
+
         const user = await prismaClient.user.create({
             data: {
                 name,
@@ -20,6 +30,6 @@ export class CreateUserController {
             }
         })
 
-        return res.json({ user })
+        return res.render('success')
     }
 }

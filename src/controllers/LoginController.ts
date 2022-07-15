@@ -17,7 +17,7 @@ export class LoginController {
         if(existingRecord){
             return res.render('success')
         }else{
-            return res.render('error')
+            return res.redirect('/?status=err-login')
         }
 
     }

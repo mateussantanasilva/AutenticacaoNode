@@ -7,9 +7,10 @@
 }
 
 .content > .wrapper{
-    height: calc(100vh - 11.3rem);
+    min-height: calc(100vh - 11.3rem);
 
     padding-inline: 2rem;
+    padding-bottom: 5vh;
 }
 
 .content > .wrapper > .box-form{

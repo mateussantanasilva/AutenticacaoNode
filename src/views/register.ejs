@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="./css/form-columns.css">
+</head>
+
+<body>
+    <main class="main-register">
+        <section class="column-1">
+            <header class="main-menu">
+                <a href="/"><img src="./img/logo.svg" alt="Logo camp.in"></a>
+            </header>
+            <div class="wrapper flex-center">
+
+                <div class="box-form">
+                    <header class="header-form">
+                        <h2 class="flex-just-start">
+                            <img src="./img/log-in.svg" alt="Ícone de entrar">
+                            Faça seu cadastro
+                        </h2>
+                        <p class="paragraph-gray">Digite todas as informações para se cadastrar.</p>
+                    </header>
+
+                    <form action="/cadastrar" method="post" class="formRegister">
+                        <label for="name" class="paragraph-gray">Nome</label>
+                        <div class="input-content flex-just-start">
+                            <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.00002 8.99972C9.05486 8.99972 10.086 8.7358 10.963 8.24142C11.8401 7.74696 12.5238 7.04415 12.9274 6.2219C13.331 5.39966 13.4366 4.49489 13.2309 3.622C13.0251 2.7491 12.5172 1.94731 11.7712 1.31798C11.0254 0.688666 10.075 0.260094 9.04046 0.0864658C8.00598 -0.0871627 6.93362 0.00194962 5.95904 0.342534C4.9845 0.683119 4.15155 1.25988 3.56551 1.99988C2.97948 2.73988 2.66669 3.60988 2.66669 4.49988C2.6681 5.69295 3.23046 6.83682 4.23034 7.68043C5.23023 8.52409 6.58598 8.9986 8.00002 8.99972ZM8.00002 1.49996C8.70322 1.49996 9.39069 1.6759 9.9754 2.00554C10.5601 2.33517 11.0158 2.80369 11.2849 3.35186C11.5541 3.90002 11.6245 4.50321 11.4872 5.08513C11.3501 5.66706 11.0114 6.20159 10.5142 6.62114C10.0169 7.04069 9.3834 7.3264 8.69371 7.44215C8.00393 7.55789 7.28909 7.4985 6.6394 7.27144C5.98967 7.04438 5.43438 6.65988 5.04368 6.16654C4.653 5.67321 4.44446 5.09321 4.44446 4.49988C4.44446 3.70425 4.81907 2.94121 5.48586 2.37861C6.15266 1.81602 7.057 1.49996 8.00002 1.49996Z" fill="#AFB6C2"/>
+                                <path d="M8 10.5002C5.87899 10.5023 3.84553 11.214 2.34574 12.4794C0.845964 13.7448 0.00235556 15.4605 0 17.2501C0 17.449 0.0936534 17.6397 0.260347 17.7804C0.427049 17.9211 0.653138 18 0.888889 18C1.12464 18 1.35073 17.9211 1.51743 17.7804C1.68412 17.6397 1.77778 17.449 1.77778 17.2501C1.77778 15.8577 2.43333 14.5224 3.60022 13.5379C4.76712 12.5533 6.34978 12.0002 8 12.0002C9.65022 12.0002 11.2329 12.5533 12.3997 13.5379C13.5667 14.5224 14.2222 15.8577 14.2222 17.2501C14.2222 17.449 14.3159 17.6397 14.4826 17.7804C14.6492 17.9211 14.8754 18 15.1111 18C15.3468 18 15.573 17.9211 15.7396 17.7804C15.9063 17.6397 16 17.449 16 17.2501C15.9977 15.4605 15.154 13.7448 13.6542 12.4794C12.1545 11.214 10.121 10.5023 8 10.5002Z" fill="#AFB6C2"/>
+                            </svg>  
+                            <input type="text" name="name" id="name" placeholder="Digite seu nome" required pattern="[^0-9]+">
+                        </div>
+
+                        <label for="email" class="paragraph-gray">E-mail</label>
+                        <div class="input-content flex-just-start">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.33329 3.33331H16.6666C17.5833 3.33331 18.3333 4.08331 18.3333 4.99998V15C18.3333 15.9166 17.5833 16.6666 16.6666 16.6666H3.33329C2.41663 16.6666 1.66663 15.9166 1.66663 15V4.99998C1.66663 4.08331 2.41663 3.33331 3.33329 3.33331Z"
+                                    stroke="#FFC632" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M18.3333 5L9.99996 10.8333L1.66663 5" stroke="#FFC632" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+                        </div>
+
+                        <label for="password" class="paragraph-gray">Senha</label>
+                        <div class="input-content flex-just-start">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.8333 9.16666H4.16667C3.24619 9.16666 2.5 9.91285 2.5 10.8333V16.6667C2.5 17.5871 3.24619 18.3333 4.16667 18.3333H15.8333C16.7538 18.3333 17.5 17.5871 17.5 16.6667V10.8333C17.5 9.91285 16.7538 9.16666 15.8333 9.16666Z"
+                                    stroke="#AFB6C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M5.83337 9.16666V5.83332C5.83337 4.72825 6.27236 3.66845 7.05376 2.88704C7.83516 2.10564 8.89497 1.66666 10 1.66666C11.1051 1.66666 12.1649 2.10564 12.9463 2.88704C13.7277 3.66845 14.1667 4.72825 14.1667 5.83332V9.16666"
+                                    stroke="#AFB6C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
+                        </div>
+
+                        <label for="confirmPass" class="paragraph-gray">Confirmar senha</label>
+                        <div class="input-content flex-just-start">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.8333 9.16666H4.16667C3.24619 9.16666 2.5 9.91285 2.5 10.8333V16.6667C2.5 17.5871 3.24619 18.3333 4.16667 18.3333H15.8333C16.7538 18.3333 17.5 17.5871 17.5 16.6667V10.8333C17.5 9.91285 16.7538 9.16666 15.8333 9.16666Z"
+                                    stroke="#AFB6C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M5.83337 9.16666V5.83332C5.83337 4.72825 6.27236 3.66845 7.05376 2.88704C7.83516 2.10564 8.89497 1.66666 10 1.66666C11.1051 1.66666 12.1649 2.10564 12.9463 2.88704C13.7277 3.66845 14.1667 4.72825 14.1667 5.83332V9.16666"
+                                    stroke="#AFB6C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <input type="password" name="confirmPass" id="confirmPass" placeholder="Digite sua senha novamente" required>
+                        </div>
+
+                        <button class="btn">Cadastrar</button>
+
+                    </form>
+
+                    <div class="options-login flex-center">
+                        <p class="links">Já possui cadastro?</p>
+                        <a href="/" class="links">Entre na sua conta</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="column-2 img-register"></section>
+    </main>
+</body>
+
+    <script src="/js/main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        if('<%=status%>' == 'err-existing-mail'){
+            Swal.fire({
+                iconColor: '#ffc533',
+                color: '#d4cbb5',
+                background: '#23221f',
+                icon: 'error',
+                title: 'Email já cadastrado!',
+                text: 'O email que foi inserido já está sendo utilizado.',
+                timer: 3000,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                }
+            })
+        }
+    </script>
+
+</html>

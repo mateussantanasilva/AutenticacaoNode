@@ -2,11 +2,13 @@
 <html lang="pt-BR">
 
     <%- include('partials/head') %>
+
     <link rel="stylesheet" href="./css/form.css">
+    
 </head>
 
 <body>
-    <main>
+    <main class="main-recovery">
         <section class="content">
             <header class="main-menu">
                 <a href="/"><img src="./img/logo.svg" alt="Logo camp.in"></a>
@@ -22,7 +24,7 @@
                             <p class="paragraph-gray">Digite as informações necessárias para criar uma nova senha.</p>
                         </header>
 
-                        <form action="/login" method="post">
+                        <form action="/recuperar-senha" method="post" class="formChangePass">
                             <label for="email" class="paragraph-gray">E-mail</label>
                             <div class="input-content flex-just-start">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -36,7 +38,7 @@
                                 <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
                             </div>
 
-                            <label for="new-pass" class="paragraph-gray">Nova senha</label>
+                            <label for="newPass" class="paragraph-gray">Nova senha</label>
                             <div class="input-content flex-just-start">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -47,10 +49,10 @@
                                         d="M5.83337 9.16666V5.83332C5.83337 4.72825 6.27236 3.66845 7.05376 2.88704C7.83516 2.10564 8.89497 1.66666 10 1.66666C11.1051 1.66666 12.1649 2.10564 12.9463 2.88704C13.7277 3.66845 14.1667 4.72825 14.1667 5.83332V9.16666"
                                         stroke="#AFB6C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <input type="password" name="new-pass" id="new-pass" placeholder="Digite uma nova senha" required>
+                                <input type="password" name="newPass" id="newPass" placeholder="Digite uma nova senha" required>
                             </div>
 
-                            <label for="confirm-pass" class="paragraph-gray">Confirmar senha</label>
+                            <label for="confirmPass" class="paragraph-gray">Confirmar senha</label>
                             <div class="input-content flex-just-start">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +63,7 @@
                                         d="M5.83337 9.16666V5.83332C5.83337 4.72825 6.27236 3.66845 7.05376 2.88704C7.83516 2.10564 8.89497 1.66666 10 1.66666C11.1051 1.66666 12.1649 2.10564 12.9463 2.88704C13.7277 3.66845 14.1667 4.72825 14.1667 5.83332V9.16666"
                                         stroke="#AFB6C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <input type="password" name="confirm-pass" id="confirm-pass" placeholder="Digite a nova senha novamente" required>
+                                <input type="password" name="confirmPass" id="confirmPass" placeholder="Digite a nova senha novamente" required>
                             </div>
                 
                             <button class="btn">Gerar nova senha</button>
@@ -70,7 +72,7 @@
 
                         <div class="options-login flex-center">
                             <p class="links">Não tem uma conta?</p>
-                            <a href="" class="links">Registre-se</a>
+                            <a href="/cadastrar" class="links">Registre-se</a>
                         </div>
                     </div>
                 </div>
@@ -78,5 +80,26 @@
         </section>
     </main>
 </body>
+    <script src="/js/main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        if('<%=status%>' == 'err-changing-pass'){
+
+            let timerInterval
+            Swal.fire({
+                iconColor: '#ffc533',
+                color: '#d4cbb5',
+                background: '#23221f',
+                icon: 'error',
+                title: 'Usuário não encontrado',
+                text: 'O email inserido não pertence a nenhuma conta existente.',
+                timer: 3000,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                }
+            })
+        }
+    </script>
 
 </html>

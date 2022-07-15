@@ -64,14 +64,66 @@
 
                     <div class="options-login flex-center">
                         <p class="links">Não tem uma conta?</p>
-                        <a href="" class="links">Registre-se</a>
+                        <a href="/cadastrar" class="links">Registre-se</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="column-2"></section>
+        <section class="column-2 img-login"></section>
     </main>
 </body>
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    if('<%=status%>' == 'pass-changed-succ'){
+        Swal.fire({
+            iconColor: '#ffc533',
+            color: '#d4cbb5',
+            background: '#23221f',
+            icon: 'success',
+            title: 'Senha alterada!',
+            text: 'Entre em uma sessão com sua nova senha.',
+            timer: 3000,
+            didOpen: () => {
+                Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+            }
+        })
+    }
+
+    else if('<%=status%>' == 'same-pass'){
+        Swal.fire({
+            iconColor: '#ffc533',
+            color: '#d4cbb5',
+            background: '#23221f',
+            icon: 'info',
+            title: 'Senhas iguais!',
+            text: 'A nova senha que foi digitada, já é a sua atual senha.',
+            timer: 3500,
+            didOpen: () => {
+                Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+            }
+        })
+    }
+
+    else if('<%=status%>' == 'err-login'){
+        Swal.fire({
+            iconColor: '#ffc533',
+            color: '#d4cbb5',
+            background: '#23221f',
+            icon: 'error',
+            title: 'Informações inválidas!',
+            text: 'Verifique se as informações inseridas estão corretas.',
+            timer: 3000,
+            didOpen: () => {
+                Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+            }
+        })
+    }
+</script>
 
 </html>
