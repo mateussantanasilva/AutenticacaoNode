@@ -1,10 +1,16 @@
+import { compare, hash } from 'bcryptjs'
 import { Request, Response } from 'express'
 import { prismaClient } from '../database/prismaClient'
 
 export class ChangePasswordController{
     async handle(req: Request, res: Response){
+        type FormatedUser = {
+            email: string
+            newPass: string
+            confirmPass: string
+        }
 
-        const { email, newPass, confirmPass } = req.body
+        const { email, newPass, confirmPass }: FormatedUser = req.body
 
         const user = await prismaClient.user.findFirst({
             where:{
@@ -13,13 +19,17 @@ export class ChangePasswordController{
         })
 
         if (user){
-            if(user.password === newPass){
+            const passwordMatch = await compare(newPass, user.password)
+
+            if(passwordMatch){
                 return res.redirect('/?status=same-pass')
             }
 
+            const passwordHash = await hash(newPass, 8)
+
             const userNewPass = await prismaClient.user.update({
                 data: {
-                    password: newPass
+                    password: passwordHash
                 },
                 where:{
                     email: email
@@ -27,11 +37,7 @@ export class ChangePasswordController{
             })
 
             return res.redirect('/?status=pass-changed-succ')
-            
-        }else{
-            return res.redirect('/recuperar-senha?status=err-changing-pass')
         }
-
-        return res.json(user)
+        return res.redirect('/recuperar-senha?status=err-changing-pass')
     }
 }

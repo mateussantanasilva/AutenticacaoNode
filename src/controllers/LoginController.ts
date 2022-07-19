@@ -1,3 +1,4 @@
+import { compare } from 'bcryptjs'
 import { Request, Response } from 'express'
 import { prismaClient } from '../database/prismaClient'
 
@@ -7,18 +8,17 @@ export class LoginController {
 
         const findUsers = await prismaClient.user.findFirst({
             where: {
-                email: email,
-                password: password
+                email
             }
         })
 
-        const existingRecord = findUsers != null ? true : false
+        
+        if(findUsers){
+            const passwordMatch = await compare(password, findUsers.password)
 
-        if(existingRecord){
-            return res.render('success')
-        }else{
-            return res.redirect('/?status=err-login')
+            if (passwordMatch) return res.render('success')
         }
-
+        
+        return res.redirect('/?status=err-login')
     }
 }

@@ -1,22 +1,24 @@
 {
   "name": "CampIn",
   "version": "1.0.0",
-  "main": "src/app.ts",
+  "main": "src/serverDev.ts",
   "repository": "https://github.com/mateussantanasilva/AutenticacaoNode.git",
   "author": "mateussantanasilva <santanasilva1778@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && tsc",
-    "start": "node dist/app",
+    "start": "node dist/serverProd",
     "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules ."
   },
   "dependencies": {
     "@prisma/client": "^4.0.0",
     "@types/express": "^4.17.13",
+    "bcryptjs": "^2.4.3",
     "ejs": "^3.1.8",
     "express": "^4.18.1"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "prisma": "^4.0.0",
     "rimraf": "^3.0.2",
     "ts-node-dev": "^2.0.0",
