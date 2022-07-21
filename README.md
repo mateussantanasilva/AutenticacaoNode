@@ -2,7 +2,9 @@
 
 Aplicação que simula um site de uma empresa de acampamento e viagens em ambientes rústicos, no qual permite que o usuário realize um CRUD, ou seja, o seu cadastro, login e recuperação de senha.
 
-![Preview](https://github.com/mateussantanasilva/CampIn/blob/main/github/front-cover.png)
+<div align="center">
+    <img src="./.github/front-cover.png" width="90%" />
+</div>
 
 ## 🚀 Tecnologias
 

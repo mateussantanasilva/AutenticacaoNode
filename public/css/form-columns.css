@@ -14,12 +14,10 @@ main .column-1{
 }
 
 /* Column-2 configs */
-
-main .column-2{
+main .column-2.img-login, main .column-2.img-register{
     grid-area: right;
 
     min-height: 100vh;
-
     background-size: cover;
     filter: contrast(1.3);
 }
